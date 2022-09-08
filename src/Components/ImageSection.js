@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import image1 from "../img/image1.jpg";
+import image1 from "../img/myphoto.jpg";
+import PrimaryButton from "./PrimariButton";
 
 function ImageSection() {
   return (
@@ -37,6 +38,7 @@ function ImageSection() {
             <p>Freelance</p>
           </div>
         </div>
+        <PrimaryButton title={'Download Cv'}/>
       </div>
     </ImageSectionStyled>
   );
@@ -45,13 +47,25 @@ function ImageSection() {
 const ImageSectionStyled = styled.div`
   margin-top: 5rem;
   display: flex;
+  @media screen and (max-width:1000px){
+    flex-direction: column;
+    .left-content{
+      margin-bottom: 2rem;
+    }
+  
+}
   .left-content {
     margin-right: 2rem;
+    width: 100%;
+    
     img {
       width: 100%;
+      /* height: 100%; */
+      object-fit: cover;
     }
   }
   .right-content {
+    
     h4{
         font-size: 2rem;
         color: var(--white-color);
@@ -64,10 +78,11 @@ const ImageSectionStyled = styled.div`
     }
     .about-info {
       display: flex;
+      padding-bottom: 1.4rem;
       .info-title{
         padding-right: 3rem;
         p{
-            font-weight: 400;
+            font-weight: 600;
         }
       }
       .info-title, .info{

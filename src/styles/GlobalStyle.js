@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     --primery-color-light:#057FFF;
     --secondary-color: #6c757d;
     --background-dark-color:#10121A;
+    --background-dark-grey:#191D2B;
     --border-color:#2e344e;
     --background-light-color:#F1F1F1;
     --background-light-color-2:rgba(3,127,255,.3);
@@ -30,12 +31,29 @@ const GlobalStyle = createGlobalStyle`
     
     
     
+    
 }
 
 body{
     background-color: var(--background-dark-color);
     color: var(--font-light-color);
 }
+
+body::-webkit-scrollbar{
+width: 9px;
+background-color: #383838;
+}
+
+body::-webkit-scrollbar-thumb{
+border-radius: 10px;
+background-color: #6b6b6b;
+}
+
+body::-webkit-scrollbar-track{
+border-radius: 10px;
+background-color: #383838;
+}
+
 a{
     font-family: inherit;
     color: inherit;
@@ -53,5 +71,37 @@ h1{
 span{
     color: var(--primary-color);
 }
+
+// Nav Toggler
+ .ham-burger-menu{
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    display: none;
+    z-index: 15;
+    svg{
+        font-size: 3rem;
+    }
+
+}
+.nav-toggle{
+    transform: translateX(0);
+    z-index: 20;
+}
+@media screen and (max-width:1200px){
+    .ham-burger-menu{
+        display: block;
+    }
+
+}
+
+
+
+// Global Media Queries
+
+@media screen and (max-width: 421px){
+    font-size: 30%;
+  }
+
 `;
 export default GlobalStyle;
